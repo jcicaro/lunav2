@@ -1,0 +1,17 @@
+/*
+    Theme Name: Luna v2
+    Theme URI: https://jc.icaro.com.au
+    Author: JC Icaro
+    Version: 2.0
+*/
+
+/* @import url("//stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"); */
+
+/* The styles are in /css/main.css */
+
+@font-face {
+    font-family: Lato;
+    src: url(/wp-content/themes/lunav2/fonts/lato-v14-latin-regular.ttf);
+    font-weight: normal;
+}
+

@@ -1,0 +1,70 @@
+
+$logoSize : 50px;
+
+footer.footer-simple {
+
+    text-align: center;
+    margin-top: 2rem;
+
+    .footer-items {
+        padding-left: 0;
+    }
+
+    .footer-item {
+        display : inline-block;
+        width : $logoSize;
+        height : $logoSize;
+        text-align: center;
+    }
+
+    .footer-link {
+        position : relative;
+        display: block;
+        width : 100%;
+        height : 100%;
+        opacity : 1;
+    }
+
+    .footer-icon {
+        color : #070707;
+        position: absolute;
+        left : 50%;
+        top : 50%;
+        font-size : 1.6em;
+        transform : translate( -50%, -50% );
+        transition : 0.3s;
+    }
+
+    .fa-codepen, .fa-linkedin, .fa-envelope { 
+        font-size : 1.4em;
+    }
+    .fa-linkedin { 
+        font-size : 1.5em;
+    }
+    .fa-envelope { 
+        font-size : 1.3em;
+    }
+
+    .footer-link:hover {  
+        .footer-icon {
+            top : 30%;
+        }
+        /*.fa-twitter { 
+            color : #3498db;
+        }
+        .fa-google-plus { 
+            color : #E34429;
+        }
+        .fa-github { 
+            color : #9C7A5B;
+        }
+        .fa-linkedin { 
+            color : #34495e;
+        }
+        .fa-codepen { 
+            color : #161616;
+        }*/
+    }
+
+
+}

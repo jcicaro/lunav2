@@ -1,0 +1,245 @@
+// To run, run the server on flywheel
+// Then open the folder in command line then run: gulp
+// URL is: http://sandbox.local/
+
+/*
+After theme activation:
+1. Set the reading defaults (page or posts)
+2. Set the menu
+
+*/
+
+
+
+<?php
+
+interface Luna_Custom_Field {
+    
+    public function serialize();
+    public function unserialize();
+    
+}
+
+class Luna_Text implements Luna_Custom_Field {
+    
+    private $field_name;
+    private $field_config;
+    
+    public function __construct($field_name, $field_config) {
+        $this->field_name = $field_name;
+        $this->field_config = $field_config;
+        $this->create_field();
+    }
+    
+    public function __toString() {
+        $str = 'Name: ' . $this->field_name . ' ; Configuration: ' . serialize($this->field_config);
+        return $str;
+    }
+    
+    private function create_field() {
+
+    }
+    
+    public function serialize() {
+        
+    }
+    
+    public function unserialize() {
+        
+    }
+    
+}
+
+$text_field = new Luna_Text('name', array(
+        'label' => 'Name',
+        'max_length' => '40'
+    ));
+    
+echo $text_field;
+
+
+
+
+
+
+
+
+
+
+
+https://fonts.googleapis.com/css?family=Lato
+
+https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei
+ZCOOL XiaoWei
+
+
+<footer class="footer-simple">
+            <ul class="footer-items">
+                <li class="footer-item"><a target="_blank" href="https://500px.com/jcicaro" class="footer-link" title="500px">
+                <span class="footer-icon fa fa-camera-retro"></span>
+                </a>
+                </li>
+                <li class="footer-item"><a target="_blank" href="https://www.flickr.com/photos/159430394@N06/" class="footer-link" title="Flickr">
+                <span class="footer-icon fa fa-flickr"></span>
+                </a>
+                </li>
+                <li class="footer-item"><a target="_blank" href="https://github.com/jcicaro" class="footer-link" title="Github">
+                <span class="footer-icon fa fa-github"></span>
+                </a>
+                </li>
+                <li class="footer-item"><a target="_blank" href="https://codepen.io/jcicaro" class="footer-link" title="Codepen">
+                <span class="footer-icon fa fa-codepen"></span>
+                </a>
+                </li>
+                <li class="footer-item"><a target="_blank" href="https://www.linkedin.com/in/juan-carlo-icaro-674a71aa/" class="footer-link" title="Linkedin">
+                <span class="footer-icon fa fa-linkedin"></span>
+                </a>
+                </li>
+                <!-- <li class="footer-item footer-link"><a target="_blank" href="https://www.hackerrank.com/jcicaro" title="Hackerrank" class="footer-link">
+                <span class="footer-icon fa fa-code"></span>
+                </a>
+                </li> -->
+                <!-- <li class="footer-item"><a target="_blank" href="mailto:jc.icaro@gmail.com" class="footer-link">
+                <span class="footer-icon fa fa-envelope"></span>
+                </a>
+                </li> -->
+            </ul>
+        </footer>
+
+
+<?php
+	$comments = get_comments( array(
+		'post_id'	=> get_the_ID(),
+		'status'	=> 'approve'
+	) );
+?>
+
+<div id="comments">
+
+	<h3><?php echo count($comments) ?> Comments</h3>
+
+	<?php if ( count($comments) ) : ?>
+
+		<ol class="base comment-list">
+			<?php foreach ( $comments as $comment ) : ?>
+				<li id="comment-<?php echo $comment->comment_post_ID ?>">
+					<div class="comment">
+						<h6 class="comment-title"><?php echo $comment->comment_author ?> said:</h6>
+						<p class="comment-date">
+							Posted on <time datetime="<?php echo $comment->comment_date ?>" itemprop="datePublished"><?php echo date('d.m.Y', strtotime($comment->comment_date) ) ?></time>
+							at <?php echo date('H:i', strtotime($comment->comment_date) ) ?>
+						</p>
+						<div class="comment-body">
+							<?php echo $comment->comment_content ?>
+						</div>
+					</div>
+				</li>
+			<?php endforeach ?>
+		</ol>
+
+	<?php else : ?>
+
+		<p>
+			There are no responses to this article, why not be the first?
+		</p>
+
+	<?php endif ?>
+
+	<?php if ( comments_open() ) : ?>
+
+		<form action="<?php echo site_url('/wp-comments-post.php') ?>" method="post">
+			<ul class="form-collection">
+				<?php if ( is_user_logged_in() ) : ?>
+					<li>
+						<span class="field-hint">Logged in as <?php echo get_user_option('user_nicename') ?></span>
+					</li>
+				<?php else : ?>
+					<li>
+						<label for="comment-author" class="field-label">Name</label>
+						<input type="text" name="author" id="comment-author" required />
+					</li>
+					<li>
+						<label for="comment-email" class="field-label">Email</label>
+						<input type="email" name="email" id="comment-email" required />
+					</li>
+				<?php endif ?>
+				<li>
+					<label for="comment-body" class="field-label">Comment</label>
+					<textarea name="comment" id="comment-body" required></textarea>
+				</li>
+				<?php if ( ! is_user_logged_in() ) : ?>
+					<li>
+						<label for="comment-query" class="field-label">20 - 15 + 7 =</label>
+						<input type="text" name="result" id-"comment-query" required />
+					</li>
+				<?php endif ?>
+				<li class="button-field">
+					<button type="submit">Post comment</button>
+					<?php comment_form_hidden_fields() ?>
+				</li>
+			</ul>
+		</form>
+
+	<?php else : ?>
+
+		<hr />
+
+		<p class="nocomments">
+			Comments are closed for this article.
+		</p>
+
+	<?php endif ?>
+
+</div>
+
+
+
+
+<p class="card-text"><?php $task_state = get_post_meta( get_the_ID(), 'task_state' ); echo print_r($task_state); ?></p>
+                        <p class="card-text"><?php $task_priority = get_post_meta( get_the_ID(), 'task_priority' ); echo print_r($task_priority); ?></p>
+
+
+console.log(<?php 
+            $parser = new CssParser();
+            // $parser->load_string('#foo { color:red; }');
+            $parser->load_file(get_template_directory() . '/client_public/css/main.css');
+            $parser->parse();
+            echo json_encode($parser->parsed);
+        ?>);
+
+
+
+
+
+            // add_action('init', 'luna_create_post_type_skills'); // create custom post type
+    // function luna_create_post_type_skills() {
+    //     register_post_type('luna_skills', array(
+    //         'labels' => array(
+    //             'name' => __('Skills'),
+    //             'singular_name' => __('Skill')
+    //         ),
+    //         'public' => true,
+    //         'has_archive' => true,
+    //         'rewrite' => array('slug' => 'skills'),
+    //         'supports' => array( 
+    //             'title', 
+    //             'editor', 
+    //             'excerpt', 
+    //             'thumbnail', 
+    //             'custom-fields', 
+    //             'revisions' 
+    //         )
+    //     ));
+    // }
+
+    // add_filter( 'rest_prepare_post', 'post_featured_image_json', 10, 3 );
+    // function post_featured_image_json( $data, $post, $context ) {
+    //     $featured_image_id = $data->data['featured_media']; // get featured image id
+    //     $featured_image_url = wp_get_attachment_image_src( $featured_image_id, 'original' ); // get url of the original size
+
+    //     if( $featured_image_url ) {
+    //         $data->data['featured_image_url'] = $featured_image_url[0];
+    //     }
+
+    //     return $data;
+    // }
