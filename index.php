@@ -20,12 +20,16 @@
 <div class="row">
 
     <div class="col-md-12">
+        <?php if( get_previous_posts_link() ) : ?>
         <button class="btn btn-light btn-sm">
             <div class="nav-previous alignleft"><?php previous_posts_link('<i class="fa fa-2x fa-arrow-left"></i>'); ?></div>
         </button>
+        <?php endif; ?>
+        <?php if( get_next_posts_link() ) : ?>
         <button class="btn btn-light btn-sm float-right">
             <div class="nav-next alignright"><?php next_posts_link('<i class="fa fa-2x fa-arrow-right"></i>'); ?></div>
         </button>
+        <?php endif; ?>
     </div>
     
 </div>
