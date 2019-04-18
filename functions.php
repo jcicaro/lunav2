@@ -21,6 +21,8 @@
 
         // wp_enqueue_style('bootstrap-css', '//stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css', array());
         wp_enqueue_style('bootstrap-css', get_template_directory_uri() . '/client_dependencies/bootstrap-4.0.0-dist/css/bootstrap.min.css', array());
+		
+		wp_enqueue_style('prism-css', get_template_directory_uri() . '/client_dependencies/prismjs-1.16.0/prism.css', array());
 
         wp_enqueue_style('main', get_template_directory_uri() . '/client_public/css/main.css', false, rand(1, 100), 'all');
 
@@ -39,6 +41,8 @@
 
         // wp_enqueue_script('bootstrap-js', '//stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js', array(), '4.2.1', $show_in_footer);
         wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/client_dependencies/bootstrap-4.0.0-dist/js/bootstrap.min.js', array('jquery'), '4.0.0', $show_in_footer);
+		
+		wp_enqueue_script('prism-js', get_template_directory_uri() . '/client_dependencies/prismjs-1.16.0/prism.js', array(), '1.16.0', $show_in_footer);
 
         // wp_enqueue_script('angular1', '//cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular.min.js', array(), '1.7.5', $show_in_footer);
         wp_enqueue_script('angular1', get_template_directory_uri() . '/client_dependencies/angular-1.7.7/angular.min.js', array(), '1.7.7', $show_in_footer);
