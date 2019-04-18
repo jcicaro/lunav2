@@ -1,5 +1,5 @@
 /* PrismJS 1.16.0
-https://prismjs.com/download.html#themes=prism-twilight&languages=markup+css+clike+javascript+markup-templating+php+powershell+scss+python+regex&plugins=line-numbers */
+https://prismjs.com/download.html#themes=prism-twilight&languages=markup+css+clike+javascript+markup-templating+java+php+powershell+scss+python+regex&plugins=line-numbers+unescaped-markup+normalize-whitespace+keep-markup */
 /**
  * prism.js Twilight theme
  * Based (more or less) on the Twilight theme originally of Textmate fame.
@@ -241,4 +241,15 @@ pre[class*="language-"].line-numbers > code {
 			padding-right: 0.8em;
 			text-align: right;
 		}
+
+/* Fallback, in case JS does not run, to ensure the code is at least visible */
+[class*='lang-'] script[type='text/plain'],
+[class*='language-'] script[type='text/plain'],
+script[type='text/plain'][class*='lang-'],
+script[type='text/plain'][class*='language-'] {
+	display: block;
+	font: 100% Consolas, Monaco, monospace;
+	white-space: pre;
+	overflow: auto;
+}
 
