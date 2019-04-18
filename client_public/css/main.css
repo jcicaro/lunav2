@@ -80,6 +80,30 @@ footer.footer-simple {
     margin-bottom: 0;
     position: absolute;
     bottom: 0; }
+  .card-custom-img .date {
+    display: block;
+    position: absolute;
+    right: 0;
+    margin: 1.5rem 1.5rem;
+    padding: 0.7rem 1.4rem;
+    background-color: rgba(30, 43, 55, 0.6);
+    color: #ECEEEC;
+    border-radius: 50%;
+    text-align: center; }
+    .card-custom-img .date .month {
+      display: block;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      line-height: 1.1; }
+    .card-custom-img .date .day {
+      display: block;
+      font-size: 1.2rem;
+      font-weight: bold;
+      line-height: 1.2; }
+    .card-custom-img .date .year {
+      display: block;
+      font-size: 0.65rem;
+      text-transform: uppercase; }
 
 /* First border-left-width setting is a fallback */
 /*

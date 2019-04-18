@@ -4,6 +4,12 @@
             <div class="card-custom-img">
                 <a href="<?php the_permalink(); ?>">
                     <h4 class="card-title"><?php the_title() ;?></h4>
+                    
+                    <span class="date">
+                        <span class="month"><?php the_time('M') ?></span>
+                        <span class="day"><?php the_time('j') ?></span>
+                        <span class="year"><?php the_time('Y') ?></span>
+                    </span>
                 </a>
             </div>
         </div>

@@ -9,6 +9,13 @@
                 <div class="card-custom-header" ng-style="c.fetchPostFeaturedImgStyle(post)">
                     <div class="card-custom-img">
                         <a ng-href="{{post.link}}"><h4 class="card-title">{{post.title.rendered}}</h4></a>
+                        
+                        <span class="date">
+                            <span class="month">{{post.display_date.month}}</span>
+                            <span class="day">{{post.display_date.day}}</span>
+                            <span class="year">{{post.display_date.year}}</span>
+                        </span>
+                        
                     </div>
                 </div>
                 

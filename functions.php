@@ -99,3 +99,16 @@
 		}
 	}
 
+
+	add_action('rest_api_init', function() {
+		register_rest_field('post', 'display_date', [
+			'get_callback' => function() {
+				return [
+					'day' => get_the_time('j'),
+					'month' => get_the_time('M'),
+					'year' => get_the_time('Y')
+				];
+			}
+		]);
+	});
+
