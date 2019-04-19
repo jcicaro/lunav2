@@ -55,7 +55,7 @@ footer.footer-simple {
 
 .card-custom {
   overflow: hidden;
-  box-shadow: 0 0 15px rgba(10, 10, 10, 0.3); }
+  box-shadow: 0 0 15px rgba(10, 10, 10, 0.2); }
 
 .card-fixed-height {
   max-height: 800px;
@@ -75,7 +75,7 @@ footer.footer-simple {
   min-height: 200px;
   max-height: 200px;
   border-color: inherit;
-  background: rgba(236, 238, 236, 0.7);
+  background: rgba(236, 238, 236, 0.88);
   position: relative; }
   .card-custom-img h4 {
     color: #1E2B37;

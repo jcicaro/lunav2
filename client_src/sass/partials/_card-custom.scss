@@ -5,7 +5,7 @@
 
 .card-custom {
   overflow: hidden;
-  box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+  box-shadow: 0 0 15px rgba(10, 10, 10, 0.2);
 }
 
 .card-fixed-height {
@@ -33,7 +33,7 @@
   // background-size: cover;
   // background-position: center;
   border-color: inherit;
-  background: rgba($color_light, 0.7);
+  background: rgba($color_light, 0.88);
   position: relative;
 
   h4 {
