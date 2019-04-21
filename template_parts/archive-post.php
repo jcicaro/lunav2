@@ -17,7 +17,7 @@
         <div class="card-body d-flex flex-column" style="overflow-y: auto">
             <p class="card-text"><?php 
 
-            if (strlen( wp_strip_all_tags(get_the_content())) > 400) {
+            if (has_excerpt() or strlen( wp_strip_all_tags(get_the_content())) > 400) {
                 echo get_the_excerpt();
             }
             else {
